@@ -19,7 +19,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     scaffoldBackgroundColor: primaryBlack,
-    
+
     colorScheme: const ColorScheme.dark(
       primary: accentGold,
       secondary: accentGold,
@@ -110,7 +110,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.light,
     scaffoldBackgroundColor: lightBackground,
-    
+
     colorScheme: const ColorScheme.light(
       primary: lightAccent,
       secondary: lightAccent,
@@ -198,8 +198,13 @@ class AppTheme {
     ),
   );
 
+  // ── Context-aware helpers ──────────────────────────────────────
+
+  static bool _isDark(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark;
+
   static BoxDecoration cardDecoration(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = _isDark(context);
     return BoxDecoration(
       color: isDark ? cardBlack : lightCard,
       border: Border.all(
@@ -210,7 +215,7 @@ class AppTheme {
   }
 
   static BoxDecoration goldCardDecoration(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = _isDark(context);
     return BoxDecoration(
       color: isDark ? accentGold : lightAccent,
       border: Border.all(
@@ -220,27 +225,31 @@ class AppTheme {
     );
   }
 
-  static Color getPrimaryColor(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark ? accentGold : lightAccent;
-  }
+  /// Scaffold / page background
+  static Color getScaffoldColor(BuildContext context) =>
+      _isDark(context) ? primaryBlack : lightBackground;
 
-  static Color getBackgroundColor(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark ? primaryBlack : lightBackground;
-  }
+  /// Primary accent (gold / warm gold)
+  static Color getPrimaryColor(BuildContext context) =>
+      _isDark(context) ? accentGold : lightAccent;
 
-  static Color getCardColor(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark ? cardBlack : lightCard;
-  }
+  /// Page background (alias for getScaffoldColor, kept for compatibility)
+  static Color getBackgroundColor(BuildContext context) =>
+      _isDark(context) ? primaryBlack : lightBackground;
 
-  static Color getTextColor(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark ? textWhite : lightTextPrimary;
-  }
+  /// Card surface
+  static Color getCardColor(BuildContext context) =>
+      _isDark(context) ? cardBlack : lightCard;
 
-  static Color getSecondaryTextColor(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark ? textGray : lightTextSecondary;
-  }
+  /// Primary text
+  static Color getTextColor(BuildContext context) =>
+      _isDark(context) ? textWhite : lightTextPrimary;
 
-  static Color getBorderColor(BuildContext context) {
-    return Theme.of(context).brightness == Brightness.dark ? borderGray : lightBorder;
-  }
+  /// Secondary / muted text
+  static Color getSecondaryTextColor(BuildContext context) =>
+      _isDark(context) ? textGray : lightTextSecondary;
+
+  /// Border color
+  static Color getBorderColor(BuildContext context) =>
+      _isDark(context) ? borderGray : lightBorder;
 }
