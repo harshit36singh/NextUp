@@ -1,91 +1,91 @@
-# NextUp 
+# NextUp 🎬
 
 A sleek, minimal Flutter app with a premium black UI for tracking upcoming movies, TV shows, and anime releases. Discover and follow content you care about with a spoiler-free interface, local notifications, and shareable lists.
 
 ---
 
-## Features
+## ✨ Features
 
-### Multi-Source Tracking
-- Movies and TV shows via TMDB
-- Anime via AniList
+### 🎭 Multi-Source Tracking
+- 🎥 Movies and TV shows via TMDB
+- 🌸 Anime via AniList
 - All content unified in a single chronological feed with countdown timers
 
-### Time-Based Browsing
+### 📅 Time-Based Browsing
 - Switch between **Today**, **This Week**, and **This Month**
 - Filter by content type: Movies, TV Shows, Anime
 - Filter further by specific genres
 
-### Favorites
+### ❤️ Favorites
 - Save any item with a single tap
 - Dedicated favorites screen with separate upcoming and released sections
 - Release date countdowns on every saved item
-- Offline-first: all favorites stored locally with Hive
+- 📦 Offline-first: all favorites stored locally with Hive
 
-### Notifications
+### 🔔 Notifications
 - Release day alert at 9 AM
 - 1-day advance reminder
 - Per-item toggle — enable or disable per favorite
 - Auto-cancelled when an item is removed from favorites
 
-### Shareable Lists
+### 🔗 Shareable Lists
 - Create custom lists from your favorites with a title and description
 - Select multiple items and generate a shareable link (`nextup://list/{id}`)
 - Share via any app — WhatsApp, Telegram, iMessage, etc.
 - Import lists from others by pasting a link
 - All list data stays local; links contain IDs only
 
-### Blind Mode
+### 🙈 Blind Mode
 - Toggle with the eye icon to hide titles (shown as ████████), posters, and details
 - Shows only content type, release date, and countdown
 - Perfect for spoiler-averse browsing
 
-### Clean Design
+### 🖤 Clean Design
 - Pure black interface with gold accents
 - Square/boxed elements, 1px borders, no rounded corners
 - Uppercase labels with increased letter spacing
 - No ratings, reviews, or comments — factual metadata only
 - Pull-to-refresh, shimmer loading placeholders, smooth scrolling
 
-### Navigation
+### 🧭 Navigation
 A floating bottom navbar gives instant access to:
 
 | Tab | Content |
 |---|---|
 | ALL | Every content type |
-| MOVIES | Movies only |
-| TV | TV shows only |
-| ANIME | Anime only |
-| FAVES | Your favorites |
-| LISTS | Your shared lists |
+| MOVIES | 🎥 Movies only |
+| TV | 📺 TV shows only |
+| ANIME | 🌸 Anime only |
+| FAVES | ❤️ Your favorites |
+| LISTS | 📋 Your shared lists |
 
 ---
 
-## Design
+## 🎨 Design
 
 | Element | Value |
 |---|---|
 | Background | `#000000` |
 | Card | `#0A0A0A` |
-| Accent | Gold `#E6B84E` |
+| Accent | ✨ Gold `#E6B84E` |
 | Typography | Sans-serif, uppercase, letter-spaced |
 | Layout | Square elements, thin borders, minimal shadows |
 
 ---
 
-## Setup
+## ⚙️ Setup
 
-### Prerequisites
+### 📋 Prerequisites
 - Flutter SDK 3.0.0+
 - Android Studio or Xcode
 - Free TMDB API key
 
-### Getting a TMDB API Key
+### 🔑 Getting a TMDB API Key
 1. Create a free account at [themoviedb.org](https://www.themoviedb.org/)
 2. Go to **Settings → API**
 3. Request a Developer key and copy it
 
-### Installation
+### 🚀 Installation
 
 ```bash
 # 1. Install dependencies
@@ -107,29 +107,29 @@ with your actual key.
 
 ---
 
-## How to Use
+## 📖 How to Use
 
-### Adding Favorites
+### ❤️ Adding Favorites
 Tap the heart icon on any release card. Favorited items appear in the **FAVES** tab with countdowns and notification controls.
 
-### Creating a Shareable List
+### 📤 Creating a Shareable List
 1. Go to **FAVES**
 2. Tap the Share icon
 3. Enter a title and description
 4. Select items to include
 5. Tap **CREATE & SHARE** — the link is copied to your clipboard
 
-### Importing a List
+### 📥 Importing a List
 1. Open the **LISTS** tab
 2. Tap the Import icon
 3. Paste a `nextup://list/{id}` link
 
-### Blind Mode
+### 🙈 Blind Mode
 Tap the eye icon in the app bar to toggle. All identifying details are hidden — only dates and countdowns remain visible.
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 lib/
@@ -156,21 +156,21 @@ lib/
 
 ---
 
-## APIs
+## 🌐 APIs
 
-### TMDB
+### 🎬 TMDB
 - Movies and TV data — free with attribution
 - Rate limit: 40 requests / 10 seconds
 - [Documentation](https://developers.themoviedb.org/3)
 
-### AniList
+### 🌸 AniList
 - Anime data — free, no key required
 - Rate limit: 90 requests / minute
 - [Documentation](https://anilist.gitbook.io/anilist-apiv2-docs/)
 
 ---
 
-## Dependencies
+## 📦 Dependencies
 
 ```yaml
 provider: ^6.1.1
@@ -186,19 +186,19 @@ shimmer: ^3.0.0
 
 ---
 
-## Privacy
+## 🔒 Privacy
 
 - No accounts, no cloud sync, no analytics
-- All favorites and lists stored locally on device
+- All favorites and lists stored locally on device 📱
 - API calls go only to TMDB and AniList for public release data
 - Shareable links contain IDs only — no personal data is transmitted
 
 ---
 
-## Platform Support
+## 📱 Platform Support
 
 - ✅ Android (API 21+)
 - ✅ iOS (12.0+)
-- Notification permissions required on first launch
+- 🔔 Notification permissions required on first launch
 
 ---
