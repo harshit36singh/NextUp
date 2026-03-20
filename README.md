@@ -4,6 +4,9 @@ A sleek, minimal Flutter app with a premium black UI for tracking upcoming movie
 
 ---
 
+## 📸 App Overview
+![NextUp App Screenshot](lib/screenshot/nextup.png)
+
 ## ✨ Features
 
 ### 🎭 Multi-Source Tracking
